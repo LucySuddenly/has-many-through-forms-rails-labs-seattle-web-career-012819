@@ -1,1 +1,16 @@
+<%= form_for(@post) do |f| %>
 
+<p>
+<%= f.label :title %>
+<%= f.text_field :title %>
+</p>
+
+<p>
+<%= f.label :content %>
+<%= f.text_field :content  %>
+</p>
+<%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) %>
+<%= f.submit %>
+<% end %>
+
+<input type="text" name="post[categories_attributes][0][name]" id="post_categories_attributes_0_name">
